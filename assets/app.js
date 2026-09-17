@@ -1,6 +1,9 @@
 (function(){
   const form=document.querySelector('#download-form'); if(!form) return;
   const input=document.querySelector('#post-url'),btn=document.querySelector('#submit-btn'),status=document.querySelector('#status'),result=document.querySelector('#result'),thumb=document.querySelector('#thumb'),resultText=document.querySelector('#result-text');
+  const oldDownload=document.querySelector('#download-link');
+  if(oldDownload) oldDownload.remove();
+
   const dict={
     ja:{search:'検索',searching:'検索中…',download:'動画をダウンロード',invalid:'Blueskyの投稿URLを入力してください。例: https://bsky.app/profile/ユーザー名/post/...',loading:'動画を確認しています…',novideo:'この投稿にはダウンロードできる動画がありません。動画付きの公開投稿URLを入力してください。',notfound:'投稿が見つかりません。削除済み、非公開、またはURLが正しくない可能性があります。',fail:'投稿を取得できませんでした。時間をおいてもう一度お試しください。',ready:'動画を見つけました。上の青い「動画をダウンロード」ボタンから保存できます。'},
     en:{search:'Search',searching:'Searching…',download:'Download Video',invalid:'Paste a Bluesky post URL, for example: https://bsky.app/profile/user/post/...',loading:'Finding the video…',novideo:'This post does not contain a downloadable video. Paste a public Bluesky post that includes a video.',notfound:'This post could not be found. It may be deleted, unavailable, or the URL may be incorrect.',fail:'We could not fetch this post. Please try again in a moment.',ready:'Video found. Use the blue “Download Video” button above to save it.'},
