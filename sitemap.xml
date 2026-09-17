@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://bskygrab.pages.dev/</loc>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://bskygrab.pages.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bskygrab.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://bskygrab.pages.dev/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://bskygrab.pages.dev/ko/"/>
+  </url>
+  <url><loc>https://bskygrab.pages.dev/en/</loc></url>
+  <url><loc>https://bskygrab.pages.dev/pt-br/</loc></url>
+  <url><loc>https://bskygrab.pages.dev/ko/</loc></url>
+</urlset>
