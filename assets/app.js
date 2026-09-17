@@ -10,7 +10,22 @@
     pt:{search:'Buscar',searching:'Buscando…',download:'Baixar vídeo',novideoButton:'Sem vídeo',invalid:'Cole uma URL de uma publicação do Bluesky, por exemplo: https://bsky.app/profile/user/post/...',loading:'Procurando o vídeo…',novideo:'Esta publicação não contém um vídeo disponível para download. Cole uma publicação pública do Bluesky que tenha vídeo.',notfound:'A publicação não foi encontrada. Ela pode ter sido removida, estar indisponível ou a URL pode estar incorreta.',fail:'Não foi possível acessar esta publicação. Tente novamente em instantes.',ready:'Vídeo encontrado. Use o botão azul “Baixar vídeo” acima para salvar.'},
     ko:{search:'검색',searching:'검색 중…',download:'영상 다운로드',novideoButton:'영상 없음',invalid:'Bluesky 게시물 URL을 붙여 넣어 주세요. 예: https://bsky.app/profile/user/post/...',loading:'영상을 찾고 있습니다…',novideo:'이 게시물에는 다운로드할 영상이 없습니다. 영상이 포함된 공개 Bluesky 게시물 URL을 입력해 주세요.',notfound:'게시물을 찾을 수 없습니다. 삭제되었거나 비공개 상태이거나 URL이 잘못되었을 수 있습니다.',fail:'게시물을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.',ready:'영상을 찾았습니다. 위의 파란색 “영상 다운로드” 버튼을 눌러 저장할 수 있습니다.'}
   };
+  const instructions={
+    ja:{step2Title:'URLを貼り付け',step2:'上の入力欄にBluesky投稿URLを貼り付けて「検索」ボタンを押します。',step3Title:'動画をダウンロード',step3:'動画が見つかったら「動画をダウンロード」ボタンを押して端末に保存します。'},
+    en:{step2Title:'Paste the URL',step2:'Paste the Bluesky post URL above and press the Search button.',step3Title:'Download the video',step3:'When the video is found, press Download Video to save it to your device.'},
+    pt:{step2Title:'Cole a URL',step2:'Cole a URL da publicação do Bluesky acima e toque no botão Buscar.',step3Title:'Baixe o vídeo',step3:'Quando o vídeo for encontrado, toque em Baixar vídeo para salvá-lo no dispositivo.'},
+    ko:{step2Title:'URL 붙여넣기',step2:'위 입력창에 게시물 URL을 붙여 넣고 검색 버튼을 누릅니다.',step3Title:'영상 다운로드',step3:'영상이 확인되면 영상 다운로드 버튼을 눌러 기기에 다운로드합니다.'}
+  };
   const lang=document.documentElement.lang.startsWith('ja')?'ja':document.documentElement.lang.startsWith('pt')?'pt':document.documentElement.lang.startsWith('ko')?'ko':'en';
+  const cards=document.querySelectorAll('.grid3 .card');
+  if(cards.length>=3){
+    const i=instructions[lang];
+    const h2_2=cards[1].querySelector('h2'); const p2=cards[1].querySelector('p');
+    const h2_3=cards[2].querySelector('h2'); const p3=cards[2].querySelector('p');
+    if(h2_2)h2_2.textContent=i.step2Title; if(p2)p2.textContent=i.step2;
+    if(h2_3)h2_3.textContent=i.step3Title; if(p3)p3.textContent=i.step3;
+  }
+
   let currentDownloadUrl='';
   let currentInput='';
   let noVideoState=false;
