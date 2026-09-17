@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bskygrab.pages.dev/sitemap.xml
