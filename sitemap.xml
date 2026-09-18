@@ -8,7 +8,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://bskygrab.pages.dev/en/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://bskygrab.pages.dev/pt-br/"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://bskygrab.pages.dev/ko/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bskygrab.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bskygrab.pages.dev/"/>
   </url>
   <url>
     <loc>https://bskygrab.pages.dev/en/</loc>
@@ -17,7 +17,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://bskygrab.pages.dev/en/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://bskygrab.pages.dev/pt-br/"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://bskygrab.pages.dev/ko/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bskygrab.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bskygrab.pages.dev/"/>
   </url>
   <url>
     <loc>https://bskygrab.pages.dev/pt-br/</loc>
@@ -26,7 +26,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://bskygrab.pages.dev/en/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://bskygrab.pages.dev/pt-br/"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://bskygrab.pages.dev/ko/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bskygrab.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bskygrab.pages.dev/"/>
   </url>
   <url>
     <loc>https://bskygrab.pages.dev/ko/</loc>
@@ -35,6 +35,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://bskygrab.pages.dev/en/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://bskygrab.pages.dev/pt-br/"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://bskygrab.pages.dev/ko/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bskygrab.pages.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bskygrab.pages.dev/"/>
+  </url>
+  <url>
+    <loc>https://bskygrab.pages.dev/privacy.html</loc>
+    <lastmod>2026-09-18</lastmod>
+  </url>
+  <url>
+    <loc>https://bskygrab.pages.dev/terms.html</loc>
+    <lastmod>2026-09-18</lastmod>
   </url>
 </urlset>
