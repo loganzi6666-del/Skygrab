@@ -87,3 +87,60 @@
     }
   })
 })();
+/* share buttons — page URL only; never the media URL */
+(function(){
+  var box=document.querySelector('.share'); if(!box) return;
+  var done=box.querySelector('.sh-done');
+  var url=(document.querySelector('link[rel=canonical]')||{}).href||location.href;
+  var title=document.title;
+  var E=encodeURIComponent;
+  var targets={
+    line:     'https://social-plugins.line.me/lineit/share?url='+E(url),
+    x:        'https://twitter.com/intent/tweet?url='+E(url)+'&text='+E(title),
+    hatena:   'https://b.hatena.ne.jp/entry/panel/?url='+E(url),
+    whatsapp: 'https://wa.me/?text='+E(title+' '+url),
+    telegram: 'https://t.me/share/url?url='+E(url)+'&text='+E(title),
+    reddit:   'https://www.reddit.com/submit?url='+E(url)+'&title='+E(title),
+    facebook: 'https://www.facebook.com/sharer/sharer.php?u='+E(url)
+  };
+
+  var nativeBtn=box.querySelector('[data-sh="native"]');
+  if(nativeBtn&&navigator.share) nativeBtn.hidden=false;
+
+  /* KakaoTalk needs the JS SDK + a domain-restricted app key.
+     Leave data-kakao-key empty and the button simply stays hidden. */
+  var kakaoBtn=box.querySelector('[data-sh="kakao"]');
+  var kakaoKey=(box.getAttribute('data-kakao-key')||'').trim();
+  if(kakaoBtn&&kakaoKey){
+    var s=document.createElement('script');
+    s.src='https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js';
+    s.onload=function(){
+      try{ if(!window.Kakao.isInitialized()) window.Kakao.init(kakaoKey); kakaoBtn.hidden=false; }catch(_){}
+    };
+    document.head.appendChild(s);
+  }
+
+  function flash(msg){ if(!done) return; done.textContent=msg; done.classList.add('on');
+    clearTimeout(flash._t); flash._t=setTimeout(function(){done.classList.remove('on')},1800); }
+
+  box.addEventListener('click',function(e){
+    var b=e.target.closest('.sh-btn'); if(!b) return;
+    var k=b.getAttribute('data-sh');
+    if(k==='native'){ navigator.share({title:title,url:url}).catch(function(){}); return; }
+    if(k==='kakao'){
+      try{ window.Kakao.Share.sendDefault({objectType:'feed',
+        content:{title:title,description:url,imageUrl:location.origin+'/favicon.svg',
+                 link:{mobileWebUrl:url,webUrl:url}},
+        buttons:[{title:'열기',link:{mobileWebUrl:url,webUrl:url}}]}); }catch(_){}
+      return;
+    }
+    if(k==='copy'){
+      var ok=function(){flash(done.getAttribute('data-copied')||'OK')};
+      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(ok).catch(function(){}); }
+      else { var t=document.createElement('textarea'); t.value=url; document.body.appendChild(t); t.select();
+             try{document.execCommand('copy');ok()}catch(_){} document.body.removeChild(t); }
+      return;
+    }
+    if(targets[k]) window.open(targets[k],'_blank','noopener,noreferrer,width=600,height=560');
+  });
+})();
