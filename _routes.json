@@ -1,7 +1,15 @@
 {
   "version": 1,
   "include": [
-    "/api/*"
+    "/api/*",
+    "/trends",
+    "/trends/",
+    "/en/trends",
+    "/en/trends/",
+    "/ko/trends",
+    "/ko/trends/",
+    "/pt-br/trends",
+    "/pt-br/trends/"
   ],
   "exclude": []
 }
