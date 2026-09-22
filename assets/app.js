@@ -128,10 +128,7 @@
     var k=b.getAttribute('data-sh');
     if(k==='native'){ navigator.share({title:title,url:url}).catch(function(){}); return; }
     if(k==='kakao'){
-      try{ window.Kakao.Share.sendDefault({objectType:'feed',
-        content:{title:title,description:url,imageUrl:location.origin+'/favicon.svg',
-                 link:{mobileWebUrl:url,webUrl:url}},
-        buttons:[{title:'열기',link:{mobileWebUrl:url,webUrl:url}}]}); }catch(_){}
+      try{ window.Kakao.Share.sendScrap({requestUrl:url}); }catch(_){}
       return;
     }
     if(k==='copy'){
