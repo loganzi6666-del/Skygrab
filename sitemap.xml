@@ -45,4 +45,44 @@
     <loc>https://bskygrab.pages.dev/terms.html</loc>
     <lastmod>2026-09-18</lastmod>
   </url>
+  <url>
+    <loc>https://bskygrab.pages.dev/trends/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>hourly</changefreq>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://bskygrab.pages.dev/trends/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bskygrab.pages.dev/en/trends/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://bskygrab.pages.dev/pt-br/trends/"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://bskygrab.pages.dev/ko/trends/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bskygrab.pages.dev/trends/"/>
+  </url>
+  <url>
+    <loc>https://bskygrab.pages.dev/en/trends/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>hourly</changefreq>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://bskygrab.pages.dev/trends/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bskygrab.pages.dev/en/trends/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://bskygrab.pages.dev/pt-br/trends/"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://bskygrab.pages.dev/ko/trends/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bskygrab.pages.dev/trends/"/>
+  </url>
+  <url>
+    <loc>https://bskygrab.pages.dev/pt-br/trends/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>hourly</changefreq>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://bskygrab.pages.dev/trends/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bskygrab.pages.dev/en/trends/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://bskygrab.pages.dev/pt-br/trends/"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://bskygrab.pages.dev/ko/trends/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bskygrab.pages.dev/trends/"/>
+  </url>
+  <url>
+    <loc>https://bskygrab.pages.dev/ko/trends/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>hourly</changefreq>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://bskygrab.pages.dev/trends/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bskygrab.pages.dev/en/trends/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://bskygrab.pages.dev/pt-br/trends/"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://bskygrab.pages.dev/ko/trends/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bskygrab.pages.dev/trends/"/>
+  </url>
 </urlset>
