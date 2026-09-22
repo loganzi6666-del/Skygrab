@@ -104,12 +104,13 @@ export async function refresh(env, locale) {
   let counts = {};
   if (locale === "en") counts = await englishTopics();
   else for (const uri of FEEDS[locale] || []) counts = merge(counts, await feedTags(uri));
-  if (!Object.keys(counts).length) return null;
-
+  /* Always stamp the snapshot, even when a locale yields nothing: otherwise that
+     locale stays "due" forever and blocks every locale after it in the rotation. */
   const now = Date.now();
   const snap = JSON.parse((await env.TRENDS.get("snap")) || "{}");
   snap[locale] = { ts: now, counts };
   await env.TRENDS.put("snap", JSON.stringify(snap));
+  if (!Object.keys(counts).length) return snap[locale];
 
   const dk = "day:" + todayKey();
   const day = JSON.parse((await env.TRENDS.get(dk)) || "{}");
