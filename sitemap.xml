@@ -38,14 +38,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bskygrab.pages.dev/"/>
   </url>
   <url>
-    <loc>https://bskygrab.pages.dev/privacy.html</loc>
-    <lastmod>2026-09-18</lastmod>
-  </url>
-  <url>
-    <loc>https://bskygrab.pages.dev/terms.html</loc>
-    <lastmod>2026-09-18</lastmod>
-  </url>
-  <url>
     <loc>https://bskygrab.pages.dev/trends/</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>hourly</changefreq>
@@ -84,5 +76,29 @@
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://bskygrab.pages.dev/pt-br/trends/"/>
     <xhtml:link rel="alternate" hreflang="ko-KR" href="https://bskygrab.pages.dev/ko/trends/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bskygrab.pages.dev/trends/"/>
+  </url>
+  <url>
+    <loc>https://bskygrab.pages.dev/privacy/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bskygrab.pages.dev/terms/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bskygrab.pages.dev/copyright/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://bskygrab.pages.dev/disclaimer/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
