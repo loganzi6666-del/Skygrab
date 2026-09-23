@@ -3,6 +3,8 @@ import { getSnap, due, refresh, view } from "./_trends.js";
 const HOME = { ja: "/", en: "/en/", ko: "/ko/", pt: "/pt-br/" };
 const PATH = { ja: "/trends/", en: "/en/trends/", ko: "/ko/trends/", pt: "/pt-br/trends/" };
 const HTML_LANG = { ja: "ja-JP", en: "en", ko: "ko-KR", pt: "pt-BR" };
+const LABEL = { ja: "日本語", en: "English", pt: "Português", ko: "한국어" };
+const ORDER = ["ja", "en", "pt", "ko"];
 
 const T = {
   ja: {
@@ -100,6 +102,8 @@ function page(locale, data) {
   const alts = Object.keys(PATH).map(l =>
     `<link rel="alternate" hreflang="${l === "pt" ? "pt-BR" : l === "ja" ? "ja" : l}" href="https://bskygrab.pages.dev${PATH[l]}">`
   ).join("") + `<link rel="alternate" hreflang="x-default" href="https://bskygrab.pages.dev/trends/">`;
+  const langs = ORDER.map(l =>
+    `<a href="${PATH[l]}"${l === locale ? ' aria-current="page"' : ""}>${esc(LABEL[l])}</a>`).join("");
   const tabs = ["rt", "d", "w", "m"].map(k =>
     `<button class="vr-tab${k === "rt" ? " on" : ""}" data-p="${k}">${esc(t.tabs[k])}</button>`).join("");
   return `<!doctype html><html lang="${HTML_LANG[locale]}"><head><meta charset="utf-8">
@@ -110,11 +114,12 @@ function page(locale, data) {
 <meta property="og:url" content="${self}"><meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/styles.css">
-</head><body><header class="site"><div class="wrap"><a class="brand" href="${home}">BskyGrab</a></div></header>
+</head><body><div class="wrap"><header>
+<a class="brand" href="${home}"><span class="logo">B</span><span>Bluesky Video Downloader</span></a>
+<nav class="langs" aria-label="Language">${langs}</nav></header></div>
 <main><section class="hero"><div class="wrap">
-<p class="vr-back"><a href="${home}">${esc(t.back)}</a></p>
 <h1>${esc(t.h1)}</h1><p class="lead">${esc(t.lead)}</p>
-<div class="vr-tabs">${tabs}</div>
+<div class="vr-tabs">${tabs}<a class="vr-back" href="${home}">${esc(t.back)}</a></div>
 ${["rt", "d", "w", "m"].map(k => panel(k, data[k], t, home, data.days)).join("")}
 <p class="vr-note">${esc(t.note)}</p>
 </div></section></main>
