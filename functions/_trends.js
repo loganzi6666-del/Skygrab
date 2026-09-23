@@ -28,6 +28,10 @@ const GROUPS = [
   ["at://did:plc:lyvh35oonxn4rkcdx7wsph4q/app.bsky.feed.generator/aaadlan5627oi",  /* 일주일치 밀린 블스 */
    "at://did:plc:lyvh35oonxn4rkcdx7wsph4q/app.bsky.feed.generator/aaagqpi4lcxsq",  /* 하루치 밀린 블스 */
    "at://did:plc:e4a32z23pazq5dxnucj6wpee/app.bsky.feed.generator/aaahdeiwme6ke"], /* 24시간 하이라이트 */
+  ["at://did:plc:i2htjidmsg7cg4bbwqlbsuyl/app.bsky.feed.generator/aaaatqgqv46kg",  /* #고양이 */
+   "at://did:plc:mt4ax2cc55gn2r33m7wefc7r/app.bsky.feed.generator/aaanje4aelv62",  /* 고양이 보여줘 */
+   "at://did:plc:lrdad6d3sis5okpc2wlqadxq/app.bsky.feed.generator/aaaiycogecphg",  /* 한국어 파판14 */
+   "at://did:plc:32ffmsxrwnugpta5nopzr6lk/app.bsky.feed.generator/aaafzu4coitnw"], /* 파판14 KR */
   ["at://did:plc:coqkaymd4t65envntucbpx2y/app.bsky.feed.generator/aaalkfmkojuda"]  /* pt */
 ];
 
