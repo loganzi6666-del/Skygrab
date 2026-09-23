@@ -23,9 +23,11 @@ const GLOBAL = [
 const GROUPS = [
   ["at://did:plc:q6kan4oxddhgwnk4yjwvviao/app.bsky.feed.generator/aaamsu44py5vg",  /* 日本語タイムライン */
    "at://did:plc:nhfe6agvwcwvwph6qwn3nr4m/app.bsky.feed.generator/aaao7mowx4c6m"], /* 青空動画部 */
-  ["at://did:plc:cgl62jlhroosxyjkaffidnon/app.bsky.feed.generator/aaae4nczs635m"], /* JP */
-  ["at://did:plc:lyvh35oonxn4rkcdx7wsph4q/app.bsky.feed.generator/aaamsaqurkzls",
-   "at://did:plc:vt44edfzaat5jbqhfhjusqwt/app.bsky.feed.generator/aaahkq4fquf34"], /* ko */
+  ["at://did:plc:cgl62jlhroosxyjkaffidnon/app.bsky.feed.generator/aaae4nczs635m",  /* JP */
+   "at://did:plc:ujbv5agep7botiks7dozqbo3/app.bsky.feed.generator/aaajgchr4xkfw"], /* JP+Hot */
+  ["at://did:plc:lyvh35oonxn4rkcdx7wsph4q/app.bsky.feed.generator/aaadlan5627oi",  /* 일주일치 밀린 블스 */
+   "at://did:plc:lyvh35oonxn4rkcdx7wsph4q/app.bsky.feed.generator/aaagqpi4lcxsq",  /* 하루치 밀린 블스 */
+   "at://did:plc:e4a32z23pazq5dxnucj6wpee/app.bsky.feed.generator/aaahdeiwme6ke"], /* 24시간 하이라이트 */
   ["at://did:plc:coqkaymd4t65envntucbpx2y/app.bsky.feed.generator/aaalkfmkojuda"]  /* pt */
 ];
 
@@ -54,11 +56,14 @@ function videoEmbed(p) {
   return null;
 }
 
+/* A post may declare several languages; take the first one we rank. */
 function langOf(p) {
-  const l = p.record && p.record.langs;
-  const v = Array.isArray(l) && l[0] ? String(l[0]) : "";
-  const s = v.slice(0, 2).toLowerCase();
-  return s === "pt" ? "pt" : s;
+  const ls = (p.record && p.record.langs) || [];
+  for (const raw of ls) {
+    const v = String(raw || "").slice(0, 2).toLowerCase();
+    if (LOCALES.indexOf(v) >= 0) return v;
+  }
+  return "";
 }
 
 function postUrl(p) {
