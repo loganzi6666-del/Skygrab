@@ -112,11 +112,11 @@ function page(locale, data) {
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/styles.css">
 </head><body><header class="site"><div class="wrap"><a class="brand" href="${home}">BskyGrab</a></div></header>
 <main><section class="hero"><div class="wrap">
+<p class="vr-back"><a href="${home}">${esc(t.back)}</a></p>
 <h1>${esc(t.h1)}</h1><p class="lead">${esc(t.lead)}</p>
 <div class="vr-tabs">${tabs}</div>
 ${["rt", "d", "w", "m"].map(k => panel(k, data[k], t, home, data.days)).join("")}
 <p class="vr-note">${esc(t.note)}</p>
-<p class="vr-back"><a href="${home}">${esc(t.back)}</a></p>
 </div></section></main>
 <script>
 (function(){var ts=document.querySelectorAll('.vr-tab');ts.forEach(function(b){b.addEventListener('click',function(){
