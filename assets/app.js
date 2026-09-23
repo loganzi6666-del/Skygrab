@@ -141,3 +141,8 @@
     if(targets[k]) window.open(targets[k],'_blank','noopener,noreferrer,width=600,height=560');
   });
 })();
+(function(){var q=new URLSearchParams(location.search).get('u');if(!q)return;
+var i=document.querySelector('#post-url'),f=document.querySelector('#download-form');if(!i||!f)return;
+if(!/^https:\/\/(www\.)?bsky\.app\/profile\/[^/]+\/post\/[^/?#]+/i.test(q))return;
+i.value=q;try{history.replaceState(null,'',location.pathname)}catch(_){}
+setTimeout(function(){f.dispatchEvent(new Event('submit',{cancelable:true,bubbles:true}))},60);})();
