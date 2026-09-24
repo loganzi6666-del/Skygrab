@@ -10,6 +10,60 @@
 export const LOCALES = ["ja", "en", "pt", "ko"];
 
 const API = "https://public.api.bsky.app/xrpc/app.bsky.feed.getFeed";
+const POSTS_API = "https://public.api.bsky.app/xrpc/app.bsky.feed.getPosts";
+
+/* How many of each locale's stored posts get their numbers re-read per sweep. */
+const RESCORE_PER_LOCALE = 40;
+
+/* A post's like and repost counts are only true at the moment we first see it.
+   If it takes off an hour later we would never notice, so the board would show
+   what was hot when we happened to look rather than what is hot now. This reads
+   the stored posts back from Bluesky and replaces the counts with current ones.
+   It also drops posts that have since been deleted or labelled adult. */
+async function rescore(items) {
+  const batches = [];
+  for (const lc of LOCALES) {
+    const bucket = items[lc];
+    if (!bucket) continue;
+    const top = Object.entries(bucket)
+      .sort((a, b) => score(b[1]) - score(a[1]))
+      .slice(0, RESCORE_PER_LOCALE)
+      .map(e => e[0]);
+    for (let i = 0; i < top.length; i += 25) batches.push(top.slice(i, i + 25));
+  }
+  if (!batches.length) return;
+
+  const results = await Promise.all(batches.map(async b => {
+    try {
+      const q = b.map(u => "uris=" + encodeURIComponent(u)).join("&");
+      const r = await fetch(POSTS_API + "?" + q, { cf: { cacheTtl: 60 } });
+      if (!r.ok) return null;
+      return (await r.json()).posts || [];
+    } catch (e) { return null; }
+  }));
+
+  /* Only touch posts whose batch actually came back. A failed request must not
+     be read as "this post is gone". */
+  const asked = new Set(), fresh = new Map();
+  for (let i = 0; i < batches.length; i++) {
+    if (!results[i]) continue;
+    for (const u of batches[i]) asked.add(u);
+    for (const p of results[i]) fresh.set(p.uri, p);
+  }
+  if (!asked.size) return;
+
+  for (const lc of LOCALES) {
+    const bucket = items[lc];
+    if (!bucket) continue;
+    for (const uri of Object.keys(bucket)) {
+      if (!asked.has(uri)) continue;
+      const p = fresh.get(uri);
+      if (!p || blocked(p)) { delete bucket[uri]; continue; }
+      bucket[uri].l = p.likeCount || 0;
+      bucket[uri].r = p.repostCount || 0;
+    }
+  }
+}
 
 /* Global video-only feeds: ~100% video, mostly English but they carry every
    language, so every sweep harvests a few ja/ko/pt posts as well. */
@@ -150,6 +204,7 @@ async function sweep(env, snap) {
 
   snap.items = snap.items || {};
   harvest(rows, snap.items, now);
+  await rescore(snap.items);
   trim(snap.items);
   snap.day = day;
   snap.ts = now;
