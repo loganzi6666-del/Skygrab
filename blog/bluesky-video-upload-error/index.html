@@ -1,0 +1,108 @@
+<!doctype html><html lang="ja-JP"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blueskyに動画が投稿できない原因と解決方法【2026年最新・上限10分】</title>
+<meta name="description" content="Blueskyに動画が投稿できないときの原因を4つに整理して解説。現在の上限は10分・300MBで、よく見かける「60秒まで」はすでに古い情報です。対応形式や1日の投稿上限もまとめました。">
+<link rel="canonical" href="https://bskygrab.pages.dev/blog/bluesky-video-upload-error/">
+<meta property="og:title" content="Blueskyに動画が投稿できない原因と解決方法【2026年最新・上限10分】"><meta property="og:description" content="Blueskyに動画が投稿できないときの原因を4つに整理して解説。現在の上限は10分・300MBで、よく見かける「60秒まで」はすでに古い情報です。対応形式や1日の投稿上限もまとめました。">
+<meta property="og:url" content="https://bskygrab.pages.dev/blog/bluesky-video-upload-error/"><meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+</head><body><div class="wrap"><header>
+<a class="brand" href="/"><span class="logo">B</span><span>Bluesky Video Downloader</span></a>
+<nav class="langs" aria-label="Language"><a href="/">日本語</a><a href="/en/">English</a><a href="/pt-br/">Português</a><a href="/ko/">한국어</a></nav></header></div>
+<main><div class="wrap"><article class="content legal post">
+<nav class="crumb" aria-label="パンくずリスト"><a href="/">ホーム</a> › <span>Blueskyに動画が投稿できない原因と解決方法</span></nav>
+<h1>Blueskyに動画が投稿できない原因と解決方法</h1>
+<p class="byline">2026年9月24日 公開　／　文：<a href="/about/">Fujii Hina</a></p>
+<p class="lead-p">Blueskyに動画を投稿しようとしたら、エラーが出た。アップロードが途中で止まる。そもそも動画が選べない。</p>
+<p>原因はほぼ4つに絞れます。しかも<strong>いちばん多いのは「上限を勘違いしている」ケース</strong>です。ここが厄介で、ネット上に出回っている数字の多くがすでに古くなっています。まずそこから整理します。</p>
+<nav class="toc" aria-label="目次"><p class="toc-h">目次</p><ol><li><a href="#limit">現在の上限（2026年9月時点）</a></li><li><a href="#old">「60秒まで」は古い情報です</a></li><li><a href="#format">原因1：ファイル形式が対応していない</a></li><li><a href="#size">原因2：長さ・容量が上限を超えている</a></li><li><a href="#daily">原因3：1日の投稿上限に達している</a></li><li><a href="#other">原因4：通信・アプリ側の問題</a></li><li><a href="#still">それでも投稿できないとき</a></li><li><a href="#faq">よくある質問</a></li></ol></nav>
+<h2 id="limit">現在の上限（2026年9月時点）</h2>
+<p>まず結論です。Blueskyの公式アプリが受け付ける動画の条件は次のとおりです。</p>
+<table class="info">
+<tr><th>長さ</th><td><strong>最大10分</strong></td></tr>
+<tr><th>ファイルサイズ</th><td><strong>最大300MB</strong></td></tr>
+<tr><th>対応形式</th><td>MP4 / MPEG / WebM / MOV（QuickTime）/ GIF</td></tr>
+<tr><th>1投稿あたり</th><td>動画は1本まで</td></tr>
+<tr><th>字幕ファイル</th><td>20個まで</td></tr>
+</table>
+<p>この数字は、Blueskyの公式アプリのソースコードおよびAT Protocolの仕様定義で確認したものです。ご自身の投稿がこの範囲に収まっているか、まず確かめてください。</p>
+
+<h2 id="old">「60秒まで」は古い情報です</h2>
+<p>ここが重要です。「Bluesky 動画 投稿できない」で検索すると、<strong>「動画は60秒まで」と書かれた記事が今でもたくさん出てきます</strong>。これは2024年9月に動画機能が始まったときの数字で、<strong>すでに引き上げられています</strong>。</p>
+<p>容量についても同じです。当初は100MBでしたが、現在は300MBまで拡張されています。仕様定義にも「以前は100MBに制限されていた」と明記されています。</p>
+<p>つまり<strong>「1分を超えているから投稿できないんだ」と諦めていた方は、もう一度試してみる価値があります。</strong>10分以内なら通るはずです。</p>
+<p>逆に言えば、古い記事を読んで「60秒に収めたのにエラーが出る」という場合、原因は長さではなく別のところにあります。以下を順番に確認してください。</p>
+
+<h2 id="format">原因1：ファイル形式が対応していない</h2>
+<p>意外と多いのがこれです。対応しているのは MP4 / MPEG / WebM / MOV / GIF で、それ以外は選択しても弾かれます。</p>
+<p>とくに次のような場合に引っかかります。</p>
+<ul>
+<li><strong>AVI、WMV、FLV、MKV</strong>などの形式　古い動画ファイルや、録画ソフトの初期設定でよくある形式です。</li>
+<li><strong>音声コーデックが特殊</strong>な場合　拡張子がMP4でも、中身のコーデックによっては処理に失敗することがあります。</li>
+</ul>
+<p>対処法はシンプルで、<strong>MP4（H.264）に変換してから投稿する</strong>ことです。スマートフォンで撮影した動画はたいていこの形式なので、問題になるのはパソコンで編集・書き出した動画がほとんどです。編集ソフトの書き出し設定で「MP4」「H.264」を選んでください。</p>
+
+<h2 id="size">原因2：長さ・容量が上限を超えている</h2>
+<p>10分・300MBを超えていないか確認してください。とくに<strong>容量のほうが先に上限に当たりやすい</strong>です。高画質で撮影した動画は、数分でも300MBを超えます。</p>
+<p>4K撮影やiPhoneの高フレームレート設定だと、1分で数百MBに達することもあります。長さが10分以内でも容量で弾かれるわけです。</p>
+<p>対処法は次のいずれかです。</p>
+<ul>
+<li><strong>解像度を下げて書き出す</strong>　1080p（フルHD）に落とすだけで容量は大きく減ります。スマホで見る分には画質の差はほとんど分かりません。</li>
+<li><strong>動画を分割する</strong>　1投稿に動画は1本までなので、長い動画は分けてスレッドとして連続投稿する形になります。</li>
+<li><strong>不要な部分をカットする</strong>　前後の余白を削るだけでも効果があります。</li>
+</ul>
+
+<h2 id="daily">原因3：1日の投稿上限に達している</h2>
+<p>Blueskyには1日あたりの動画投稿数の上限があります。公式が動画機能を発表した際には<strong>1日25本／合計10GBまで</strong>と案内されていました。</p>
+<p>ただしこの数字は発表当時のもので、公式も「調整する可能性がある」と述べています。現在の正確な値は公表されていないため、参考値として扱ってください。</p>
+<p>連続して何本も投稿したあとにエラーが出る場合は、これに当たっている可能性があります。<strong>対処法は時間を置くことだけ</strong>です。日付が変わればリセットされます。</p>
+
+<h2 id="other">原因4：通信・アプリ側の問題</h2>
+<p>上記のどれにも当てはまらない場合、環境側の問題を疑います。</p>
+<ul>
+<li><strong>通信が不安定</strong>　動画のアップロードは画像よりはるかに時間がかかります。電波の弱い場所やテザリング中は失敗しやすくなります。Wi-Fiの安定した場所で試してください。</li>
+<li><strong>アプリのバージョンが古い</strong>　上限の引き上げなどはアプリ側の更新で反映されます。App Store / Google Play で更新を確認してください。</li>
+<li><strong>ストレージの空き不足</strong>　端末側で一時ファイルを作るため、空き容量が少ないと失敗します。</li>
+<li><strong>アプリの一時的な不具合</strong>　アプリを完全に終了して再起動すると直ることがあります。</li>
+</ul>
+
+<h2 id="still">それでも投稿できないとき</h2>
+<p>ここまで試して解決しない場合は、次の順で切り分けます。</p>
+<ol>
+<li><strong>別の短い動画で試す</strong>　10秒程度のスマホ撮影動画を投稿してみます。これが通るなら、元の動画のファイル側に原因があります。</li>
+<li><strong>ブラウザ版で試す</strong>　パソコンのブラウザから <code>bsky.app</code> にアクセスして投稿してみます。アプリ固有の問題かどうかが分かります。</li>
+<li><strong>時間を置く</strong>　Bluesky側で一時的な障害が起きていることもあります。数時間後に再度試してください。</li>
+</ol>
+
+<h2 id="faq">よくある質問</h2>
+<h3>動画は何分まで投稿できますか？</h3>
+<p>最大10分です。サービス開始当初は60秒でしたが、現在は引き上げられています。</p>
+<h3>ファイルサイズの上限は？</h3>
+<p>300MBです。こちらも当初の100MBから拡張されています。</p>
+<h3>1つの投稿に動画を2本入れられますか？</h3>
+<p>できません。1投稿につき動画は1本までです。複数本を見せたい場合は、スレッドとして連続投稿してください。</p>
+<h3>GIFは投稿できますか？</h3>
+<p>できます。対応形式に含まれています。</p>
+<h3>投稿した動画をあとから差し替えられますか？</h3>
+<p>できません。投稿を削除して、投稿し直すことになります。</p>
+
+<h2>まとめ</h2>
+<p>「投稿できない」の原因は、順に確認すればほぼ特定できます。</p>
+<ol>
+<li>形式はMP4 / MPEG / WebM / MOV / GIFか</li>
+<li>10分・300MB以内か</li>
+<li>その日に何本も投稿していないか</li>
+<li>通信とアプリの更新は問題ないか</li>
+</ol>
+<p>そして繰り返しになりますが、<strong>「60秒まで」という情報を見て諦めた方は、もう一度試してください。</strong>今は10分まで通ります。</p>
+<p>なお、Blueskyに投稿された動画を保存したい場合は、<a href="/blog/bluesky-video-save/">Blueskyの動画を保存する方法</a>で手順を解説しています。</p>
+<p class="cta-wrap"><a class="cta" href="/">動画を保存する</a></p>
+</article></div></main>
+<footer><div class="wrap foot"><div>© 2026 Bluesky Video Downloader</div><div><a href="/trends/">人気動画</a><a href="/blog/">使い方ガイド</a><a href="/about/">運営者情報</a><a href="/contact/">お問い合わせ</a><a href="/privacy/">プライバシーポリシー</a><a href="/terms/">利用規約</a><a href="/copyright/">著作権</a><a href="/disclaimer/">免責事項</a></div></div></footer>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Blueskyに動画が投稿できない原因と解決方法【2026年最新・上限10分】","description":"Blueskyに動画が投稿できないときの原因を4つに整理して解説。現在の上限は10分・300MBで、よく見かける「60秒まで」はすでに古い情報です。対応形式や1日の投稿上限もまとめました。","datePublished":"2026-09-24","dateModified":"2026-09-24","inLanguage":"ja","author":{"@type":"Person","name":"Fujii Hina","url":"https://bskygrab.pages.dev/about/"},"publisher":{"@type":"Organization","name":"Bluesky Video Downloader","url":"https://bskygrab.pages.dev/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bskygrab.pages.dev/blog/bluesky-video-upload-error/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://bskygrab.pages.dev/"},{"@type":"ListItem","position":2,"name":"Blueskyに動画が投稿できない原因と解決方法","item":"https://bskygrab.pages.dev/blog/bluesky-video-upload-error/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Blueskyに動画が投稿できないときの確認手順","description":"Blueskyへの動画投稿が失敗するときに、原因を順番に切り分けて解決するための手順。","totalTime":"PT5M","supply":[],"tool":[],"step":[{"@type":"HowToStep","name":"ファイル形式を確認する","text":"MP4、MPEG、WebM、MOV、GIFのいずれかであることを確認します。AVIやWMVの場合はMP4に変換します。","url":"https://bskygrab.pages.dev/blog/bluesky-video-upload-error/#format"},{"@type":"HowToStep","name":"長さと容量を確認する","text":"10分以内、300MB以内に収まっているか確認します。超えている場合は解像度を下げるか動画を分割します。","url":"https://bskygrab.pages.dev/blog/bluesky-video-upload-error/#size"},{"@type":"HowToStep","name":"1日の投稿上限を確認する","text":"その日に何本も動画を投稿している場合は上限に達している可能性があります。時間を置いて再度試します。","url":"https://bskygrab.pages.dev/blog/bluesky-video-upload-error/#daily"},{"@type":"HowToStep","name":"通信環境とアプリを確認する","text":"安定したWi-Fiに接続し、アプリを最新版に更新してから再度試します。","url":"https://bskygrab.pages.dev/blog/bluesky-video-upload-error/#other"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Blueskyの動画は何分まで投稿できますか？","acceptedAnswer":{"@type":"Answer","text":"最大10分です。サービス開始当初は60秒でしたが、現在は引き上げられています。"}},{"@type":"Question","name":"Bluesky動画のファイルサイズ上限は？","acceptedAnswer":{"@type":"Answer","text":"300MBです。当初の100MBから拡張されています。"}},{"@type":"Question","name":"Blueskyの動画はどの形式に対応していますか？","acceptedAnswer":{"@type":"Answer","text":"MP4、MPEG、WebM、MOV（QuickTime）、GIFに対応しています。AVIやWMVなどは対応していないため、MP4に変換してから投稿してください。"}},{"@type":"Question","name":"1つの投稿に動画を2本入れられますか？","acceptedAnswer":{"@type":"Answer","text":"できません。1投稿につき動画は1本までです。複数本見せたい場合はスレッドとして連続投稿してください。"}},{"@type":"Question","name":"動画を投稿しようとするとエラーが出ます","acceptedAnswer":{"@type":"Answer","text":"形式・長さ・容量の3点を確認してください。それでも解決しない場合は、1日の投稿上限、通信環境、アプリのバージョンを順に確認します。"}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ce27ec3d43874ef58817c381e71ea3d0"}'></script></body></html>

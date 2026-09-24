@@ -1,0 +1,103 @@
+<!doctype html><html lang="ja-JP"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blueskyの動画が保存できない原因と対処法7選【症状別】</title>
+<meta name="description" content="Blueskyの動画が保存できないときの原因を症状別に7つ整理。「投稿が見つかりません」と出る本当の理由、引用投稿の落とし穴、iPhoneで保存先が見つからない場合の解決方法まで解説します。">
+<link rel="canonical" href="https://bskygrab.pages.dev/blog/bluesky-video-save-error/">
+<meta property="og:title" content="Blueskyの動画が保存できない原因と対処法7選【症状別】"><meta property="og:description" content="Blueskyの動画が保存できないときの原因を症状別に7つ整理。「投稿が見つかりません」と出る本当の理由、引用投稿の落とし穴、iPhoneで保存先が見つからない場合の解決方法まで解説します。">
+<meta property="og:url" content="https://bskygrab.pages.dev/blog/bluesky-video-save-error/"><meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+</head><body><div class="wrap"><header>
+<a class="brand" href="/"><span class="logo">B</span><span>Bluesky Video Downloader</span></a>
+<nav class="langs" aria-label="Language"><a href="/">日本語</a><a href="/en/">English</a><a href="/pt-br/">Português</a><a href="/ko/">한국어</a></nav></header></div>
+<main><div class="wrap"><article class="content legal post">
+<nav class="crumb" aria-label="パンくずリスト"><a href="/">ホーム</a> › <span>Blueskyの動画が保存できない原因と対処法7選</span></nav>
+<h1>Blueskyの動画が保存できない原因と対処法7選</h1>
+<p class="byline">2026年9月24日 公開　／　文：<a href="/about/">Fujii Hina</a></p>
+<p class="lead-p">URLを貼ったのに動画が出てこない。ボタンを押しても何も起きない。保存したはずなのに見当たらない。</p>
+<p>症状ごとに原因は違います。この記事では<strong>症状から原因を逆引きできるように</strong>7つのケースを整理しました。上から順に確認すれば、ほぼ特定できます。</p>
+<nav class="toc" aria-label="目次"><p class="toc-h">目次</p><ol><li><a href="#c1">1. 投稿者が「ログアウト状態では非表示」に設定している</a></li><li><a href="#c2">2. 投稿が削除されている／非公開になっている</a></li><li><a href="#c3">3. その投稿に動画が入っていない</a></li><li><a href="#c4">4. URLが途中で切れている</a></li><li><a href="#c5">5. まだ処理中（待てば始まります）</a></li><li><a href="#c6">6. 保存できているのに見つけられない（iPhone）</a></li><li><a href="#c7">7. ブラウザ・通信側の問題</a></li><li><a href="#faq">よくある質問</a></li></ol></nav>
+<h2 id="c1">1. 投稿者が「ログアウト状態では非表示」に設定している</h2>
+<p><strong>症状：</strong>「投稿が見つかりません」と出る。でもBlueskyのアプリでは普通に見られる。</p>
+<p>これが<strong>いちばん多く、いちばん分かりにくい原因</strong>です。Blueskyには、自分の投稿をログインしていない人に見せない設定があります。この設定をオンにしているアカウントの投稿は、ログインしていない外部のツールからは一切取得できません。</p>
+<p>日本のユーザーはこの設定を使っている方が比較的多く、とくに創作系・イラスト系のアカウントでよく見かけます。</p>
+<p><strong>対処法：</strong>残念ながらありません。これは投稿者本人が「ログインしていない人には見せない」と明示的に選んだ設定です。当サイトはその意思を尊重して取得を行いません。どうしても必要な場合は、投稿者ご本人に直接お願いしてください。</p>
+
+<h2 id="c2">2. 投稿が削除されている／非公開になっている</h2>
+<p><strong>症状：</strong>「投稿が見つかりません」と出る。Blueskyで開いても表示されない。</p>
+<p>投稿そのものが消えています。投稿者が削除した、アカウントを削除した、あるいはアカウントが一時的に停止されている、のいずれかです。</p>
+<p><strong>対処法：</strong>元の投稿が存在しない以上、取得できません。別の投稿URLで試してください。</p>
+
+<h2 id="c3">3. その投稿に動画が入っていない</h2>
+<p><strong>症状：</strong>「この投稿にはダウンロードできる動画がありません」と出る。</p>
+<p>次のような投稿は、見た目が動画っぽくても対象外です。</p>
+<ul>
+<li><strong>画像だけの投稿</strong>　当サイトの動画保存機能は動画専用です。</li>
+<li><strong>外部サイトのリンクを貼っただけの投稿</strong>　YouTubeなどのリンクが貼られている場合、動画はBlueskyではなくその外部サイトにあります。</li>
+<li><strong>引用投稿</strong>　これが見落としがちです。誰かの動画投稿を引用した投稿のURLをコピーすると、引用した側には動画の実体がありません。<strong>引用元の投稿を開いて、そちらのURLをコピーしてください。</strong></li>
+</ul>
+
+<h2 id="c4">4. URLが途中で切れている</h2>
+<p><strong>症状：</strong>「Blueskyの投稿URLを入力してください」と出て、そもそも検索が始まらない。</p>
+<p>正しい形は次のとおりです。</p>
+<p class="code">https://bsky.app/profile/ユーザー名/post/投稿ID</p>
+<p>末尾の投稿IDまで含まれている必要があります。手動で選択してコピーすると、末尾が欠けたり、余計な文字が混ざったりしがちです。</p>
+<p><strong>対処法：</strong>手で選ばず、投稿の共有アイコンからリンクをコピーする機能を使ってください。確実です。パソコンならアドレスバーからのコピーでも構いません。</p>
+
+<h2 id="c5">5. まだ処理中（待てば始まります）</h2>
+<p><strong>症状：</strong>ボタンを押したのに、画面が固まったように見える。</p>
+<p>当サイトは、投稿者がアップロードした動画ファイルそのものをBlueskyのサーバーから取り寄せてお渡ししています。作り直しや変換は行いません。そのため<strong>ファイルを取り寄せる時間がそのままかかります</strong>。</p>
+<p>実測では3MBほどの動画で約10秒でした。容量が大きい動画ほど長くなります。</p>
+<p><strong>対処法：</strong>待ってください。故障ではありません。1分以上たっても始まらない場合のみ、ページを再読み込みしてやり直してください。</p>
+
+<h2 id="c6">6. 保存できているのに見つけられない（iPhone）</h2>
+<p><strong>症状：</strong>ダウンロードは終わったのに、写真アプリを見ても動画がない。</p>
+<p>保存は成功しています。<strong>iPhoneでは、ダウンロードしたファイルは「写真」アプリではなく「ファイル」アプリに入ります。</strong>これを知らないと「保存できていない」と誤解しがちです。</p>
+<p><strong>対処法：</strong></p>
+<ol>
+<li>Safariのアドレスバー付近にある下向き矢印のアイコンをタップします。</li>
+<li>ダウンロード済みファイルの一覧が開くので、動画をタップします。</li>
+<li>「ファイル」アプリで再生されます。ここで共有ボタンを押し、「ビデオを保存」を選びます。</li>
+<li>写真アプリのカメラロールに入ります。</li>
+</ol>
+<p>「ファイル」アプリに置いたままでよければ、3番以降は不要です。</p>
+
+<h2 id="c7">7. ブラウザ・通信側の問題</h2>
+<p><strong>症状：</strong>特定の端末やブラウザでだけうまくいかない。</p>
+<ul>
+<li><strong>プライベートブラウズ</strong>　ブラウザによってはダウンロードが制限されます。通常のウィンドウで試してください。</li>
+<li><strong>広告ブロッカー・拡張機能</strong>　まれにダウンロードの処理を妨げます。一時的に無効にして試してください。</li>
+<li><strong>端末の空き容量不足</strong>　保存先に空きがないと失敗します。</li>
+<li><strong>通信が不安定</strong>　途中で切れると失敗します。安定したWi-Fiで試してください。</li>
+</ul>
+<p>切り分けとしては、<strong>別のブラウザか別の端末で同じURLを試す</strong>のがいちばん早いです。それで成功するなら、元の環境側の問題だと分かります。</p>
+
+<h2 id="faq">よくある質問</h2>
+<h3>特定のアカウントの動画だけ保存できません</h3>
+<p>そのアカウントが「ログアウト状態のユーザーに表示しない」設定にしている可能性が高いです。上の <a href="#c1">1番</a> をご覧ください。設定は投稿者本人しか変更できません。</p>
+<h3>Blueskyのアプリでは見られるのに保存できないのはなぜ？</h3>
+<p>アプリではあなたがログインしているため表示されますが、当サイトはログインせずに取得します。そのため、ログアウト状態で見られない投稿は取得できません。</p>
+<h3>引用投稿の動画を保存するには？</h3>
+<p>引用元の投稿を開き、そちらのURLをコピーしてください。引用した側の投稿には動画の実体が含まれていません。</p>
+<h3>何度やっても途中で止まります</h3>
+<p>容量の大きい動画ほど時間がかかります。安定したWi-Fi環境で、通常のブラウザウィンドウから試してみてください。</p>
+
+<h2>まとめ</h2>
+<p>症状別にまとめると次のとおりです。</p>
+<ul>
+<li><strong>「投稿が見つかりません」</strong>　→ 非表示設定（1番）か削除済み（2番）。ほとんどが1番です。</li>
+<li><strong>「動画がありません」</strong>　→ 画像投稿か引用投稿（3番）。</li>
+<li><strong>検索が始まらない</strong>　→ URLが不完全（4番）。</li>
+<li><strong>反応がないように見える</strong>　→ 処理中（5番）。待てば始まります。</li>
+<li><strong>保存したのに見つからない</strong>　→ iPhoneの保存先（6番）。</li>
+</ul>
+<p>基本的な手順そのものは、<a href="/blog/bluesky-video-save/">Blueskyの動画を保存する方法</a>で解説しています。</p>
+<p class="cta-wrap"><a class="cta" href="/">もう一度試す</a></p>
+</article></div></main>
+<footer><div class="wrap foot"><div>© 2026 Bluesky Video Downloader</div><div><a href="/trends/">人気動画</a><a href="/blog/">使い方ガイド</a><a href="/about/">運営者情報</a><a href="/contact/">お問い合わせ</a><a href="/privacy/">プライバシーポリシー</a><a href="/terms/">利用規約</a><a href="/copyright/">著作権</a><a href="/disclaimer/">免責事項</a></div></div></footer>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Blueskyの動画が保存できない原因と対処法7選【症状別】","description":"Blueskyの動画が保存できないときの原因を症状別に7つ整理。「投稿が見つかりません」と出る本当の理由、引用投稿の落とし穴、iPhoneで保存先が見つからない場合の解決方法まで解説します。","datePublished":"2026-09-24","dateModified":"2026-09-24","inLanguage":"ja","author":{"@type":"Person","name":"Fujii Hina","url":"https://bskygrab.pages.dev/about/"},"publisher":{"@type":"Organization","name":"Bluesky Video Downloader","url":"https://bskygrab.pages.dev/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bskygrab.pages.dev/blog/bluesky-video-save-error/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://bskygrab.pages.dev/"},{"@type":"ListItem","position":2,"name":"Blueskyの動画が保存できない原因と対処法7選","item":"https://bskygrab.pages.dev/blog/bluesky-video-save-error/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Blueskyの動画が保存できないときの切り分け手順","description":"Blueskyの動画保存が失敗するときに、症状から原因を特定して解決するための手順。","totalTime":"PT3M","supply":[],"tool":[],"step":[{"@type":"HowToStep","name":"エラーメッセージを確認する","text":"「投稿が見つかりません」か「動画がありません」かで原因が分かれます。","url":"https://bskygrab.pages.dev/blog/bluesky-video-save-error/#c1"},{"@type":"HowToStep","name":"投稿の公開状態を確認する","text":"ログアウト状態のブラウザで投稿URLを開き、表示されるか確認します。表示されなければ非表示設定か削除済みです。","url":"https://bskygrab.pages.dev/blog/bluesky-video-save-error/#c1"},{"@type":"HowToStep","name":"URLを取り直す","text":"投稿の共有アイコンからリンクをコピーし直します。引用投稿の場合は引用元のURLを使います。","url":"https://bskygrab.pages.dev/blog/bluesky-video-save-error/#c4"},{"@type":"HowToStep","name":"待つ、または環境を変える","text":"処理に数秒から十数秒かかります。それでも失敗する場合は別のブラウザや端末で試します。","url":"https://bskygrab.pages.dev/blog/bluesky-video-save-error/#c5"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"特定のアカウントの動画だけ保存できないのはなぜですか？","acceptedAnswer":{"@type":"Answer","text":"そのアカウントが「ログアウト状態のユーザーに表示しない」設定にしている可能性が高いです。この設定の投稿はログインしていない外部ツールからは取得できず、投稿者本人しか設定を変更できません。"}},{"@type":"Question","name":"Blueskyのアプリでは見られるのに保存できません","acceptedAnswer":{"@type":"Answer","text":"アプリではあなたがログインしているため表示されますが、保存ツールはログインせずに取得します。そのため、ログアウト状態で見られない投稿は取得できません。"}},{"@type":"Question","name":"引用投稿の動画を保存するには？","acceptedAnswer":{"@type":"Answer","text":"引用元の投稿を開き、そちらのURLをコピーしてください。引用した側の投稿には動画の実体が含まれていません。"}},{"@type":"Question","name":"ボタンを押しても反応がありません","acceptedAnswer":{"@type":"Answer","text":"ファイルを取り寄せる処理に数秒から十数秒かかります。3MBほどの動画で約10秒が目安です。1分以上たっても始まらない場合のみ再読み込みしてください。"}},{"@type":"Question","name":"保存したのに写真アプリに見当たりません","acceptedAnswer":{"@type":"Answer","text":"iPhoneではダウンロードしたファイルが「ファイル」アプリに入ります。ファイルアプリで動画を開き、共有ボタンから「ビデオを保存」を選ぶと写真アプリに移せます。"}}]}</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ce27ec3d43874ef58817c381e71ea3d0"}'></script></body></html>
