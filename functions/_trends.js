@@ -130,8 +130,11 @@ function trim(items) {
 /* One sweep: always a global video feed, plus the next language group. */
 async function sweep(env, snap) {
   const now = Date.now();
-  const turn = (snap.turn || 0) % GROUPS.length;
-  const uris = [GLOBAL[turn % GLOBAL.length]].concat(GROUPS[turn]);
+  /* Every source, every run. The rotation this replaced advanced one group
+     per refresh, and refreshes only fire when somebody loads a page - with
+     little traffic the Japanese and Korean groups went a whole day without a
+     turn while English filled up from the global feeds on every sweep. */
+  const uris = GLOBAL.concat(...GROUPS);
   const rows = (await Promise.all(uris.map(fetchFeed))).flat();
 
   const day = today();
@@ -149,7 +152,6 @@ async function sweep(env, snap) {
   harvest(rows, snap.items, now);
   trim(snap.items);
   snap.day = day;
-  snap.turn = turn + 1;
   snap.ts = now;
   await env.TRENDS.put("vsnap", JSON.stringify(snap));
   return snap;
