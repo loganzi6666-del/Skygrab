@@ -1,0 +1,11 @@
+name = "bskygrab-trends-cron"
+main = "src/index.js"
+compatibility_date = "2026-09-17"
+
+# Wakes the ranking collector. Pages Functions cannot run on a schedule, and the
+# collector only sweeps when a page is requested - with almost no traffic the
+# daily board sat empty for most of the day. Ten minutes clears the five minute
+# gate on the server side, so every run does real work: 144 sweeps a day, 144 KV
+# writes against a free limit of 1000.
+[triggers]
+crons = ["*/10 * * * *"]
