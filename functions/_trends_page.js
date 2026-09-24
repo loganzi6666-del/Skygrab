@@ -127,7 +127,7 @@ ${["rt", "d", "w", "m"].map(k => panel(k, data[k], t, home, data.days)).join("")
 (function(){var ts=document.querySelectorAll('.vr-tab');ts.forEach(function(b){b.addEventListener('click',function(){
 ts.forEach(function(x){x.classList.remove('on')});b.classList.add('on');
 ['rt','d','w','m'].forEach(function(k){var p=document.getElementById('p-'+k);if(p)p.hidden=(k!==b.dataset.p)});});});})();
-</script></body></html>`;
+</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ce27ec3d43874ef58817c381e71ea3d0"}'></script></body></html>`;
 }
 
 export function handler(locale) {
